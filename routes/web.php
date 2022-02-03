@@ -27,14 +27,21 @@ Route::get('about', [PageController::class, 'about']);
 Route::get('blog_single', [PageController::class, 'blog_single']);
 Route::get('blog', [PageController::class, 'blog']);
 Route::get('chef', [PageController::class, 'chef']);
-Route::get('contact', [PageController::class, 'contact']);
 Route::get('/menu', [PageController::class, 'menu']);
 Route::get('reservation', [PageController::class, 'reservation']);
 
+
+
+
+Route::get('contact', [App\Http\Controllers\ContacController::class, 'index'])
+->name('contact.index');
+Route::post('contact',[\App\Http\Controllers\ContacController::class,'contact'])
+->name('contact.send');
+
 //POST zaprosni turlari
-//1.Agar ma`lumotni o`zgartirish garak bo`lsa: 
+//1.Agar ma`lumotni o`zgartirish garak bo`lsa:
 //PATCH, PUT
-//2.Agar ma`lumotni o`chirish garak bo`lsa: 
+//2.Agar ma`lumotni o`chirish garak bo`lsa:
 //DELETE
 
 

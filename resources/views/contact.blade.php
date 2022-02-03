@@ -52,8 +52,8 @@
       <div class="row d-flex align-items-stretch no-gutters">
          <div class="col-md-6 p-5 order-md-last">
             <h2 class="h4 mb-5 font-weight-bold">Contact Us</h2>
-            <form action="{{ route('admin/xabar/store') }}" method="POST">
-                @csrf 
+            <form action="{{ route('contact.send') }}" method="POST">
+                @csrf
                <div class="form-group">
                   <input type="text" class="form-control" name="name" placeholder="Your Name">
                </div>
