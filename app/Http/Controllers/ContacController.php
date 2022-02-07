@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\ConatctMassegeNotification;
 use Illuminate\Http\Request;
+use NotificationChannels\Telegram\TelegramMessage;
+use Illuminate\Support\Facades\Notification;
+
 
 class ContacController extends Controller
 {
@@ -13,6 +17,11 @@ class ContacController extends Controller
 
     public function contact(Request $request)
     {
-     dd($request->input());
+        $my_tg_id= 976090739;
+
+        Notification::send($my_tg_id ,new ConatctMassegeNotification());
+
+
+        dd($request->input());
     }
 }
